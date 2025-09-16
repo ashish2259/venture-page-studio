@@ -10,7 +10,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold text-foreground mb-4">StartupCo</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-4">FUSIONNEX INNOVATIONS</h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Transforming businesses through innovative technology solutions and exceptional user experiences.
             </p>
@@ -57,7 +57,7 @@ export const Footer = () => {
             <div className="space-y-3 text-muted-foreground mb-6">
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4" />
-                <span>hello@startupco.com</span>
+                <span>hello@fusionnex.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4" />
@@ -65,7 +65,7 @@ export const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4" />
-                <span>San Francisco, CA</span>
+                <span>Mumbai, India</span>
               </div>
             </div>
             
@@ -88,7 +88,7 @@ export const Footer = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © 2024 StartupCo. All rights reserved.
+            © 2024 FUSIONNEX INNOVATIONS INDIA PVT LTD. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
             <a href="#" className="hover:text-primary transition-smooth">Privacy Policy</a>
