@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Twitter, Linkedin, Github } from "lucide-react";
+import fusionnexLogo from "@/assets/fusionnex-logo.png";
 
 export const Footer = () => {
   return (
@@ -10,7 +11,10 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold text-foreground mb-4">FUSIONNEX INNOVATIONS</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={fusionnexLogo} alt="FUSIONNEX INNOVATIONS" className="w-12 h-12" />
+              <h3 className="text-xl font-bold text-foreground">FUSIONNEX INNOVATIONS</h3>
+            </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Transforming businesses through innovative technology solutions and exceptional user experiences.
             </p>
