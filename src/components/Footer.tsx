@@ -57,15 +57,15 @@ export const Footer = () => {
             <div className="space-y-3 text-muted-foreground mb-6">
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4" />
-                <span>hello@fusionnex.com</span>
+                <span>hr@fusionnex.net</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 9731852431</span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4" />
-                <span>Mumbai, India</span>
+                <span>Bengaluru, India</span>
               </div>
             </div>
             
