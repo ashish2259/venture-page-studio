@@ -8,28 +8,29 @@ export const Footer = () => {
   return (
     <footer className="bg-gradient-subtle border-t border-border">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Company Info */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img src={fusionnexLogo} alt="FUSIONNEX INNOVATIONS" className="w-12 h-12" />
-              <h3 className="text-xl font-bold text-foreground">FUSIONNEX INNOVATIONS</h3>
-            </div>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              Transforming businesses through innovative technology solutions and exceptional user experiences.
-            </p>
-            <div className="flex space-x-4">
-              <Button variant="ghost" size="icon" className="hover:bg-primary/10">
-                <Twitter className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:bg-primary/10">
-                <Linkedin className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:bg-primary/10">
-                <Github className="w-5 h-5" />
-              </Button>
-            </div>
+        {/* Company Logo and Name at Top */}
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <img src={fusionnexLogo} alt="FUSIONNEX INNOVATIONS" className="w-16 h-16" />
+            <h2 className="text-3xl font-bold text-foreground">FUSIONNEX INNOVATIONS</h2>
           </div>
+          <p className="text-muted-foreground mb-6 leading-relaxed max-w-2xl mx-auto">
+            Transforming businesses through innovative technology solutions and exceptional user experiences.
+          </p>
+          <div className="flex justify-center space-x-4">
+            <Button variant="ghost" size="icon" className="hover:bg-primary/10">
+              <Twitter className="w-5 h-5" />
+            </Button>
+            <Button variant="ghost" size="icon" className="hover:bg-primary/10">
+              <Linkedin className="w-5 h-5" />
+            </Button>
+            <Button variant="ghost" size="icon" className="hover:bg-primary/10">
+              <Github className="w-5 h-5" />
+            </Button>
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           
           {/* Services */}
           <div>
