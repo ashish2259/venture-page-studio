@@ -21,8 +21,8 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#" className="text-white/90 hover:text-white transition-smooth">Home</a>
-            <a href="#" className="text-white/90 hover:text-white transition-smooth">Services</a>
+            <a href="/" className="text-white/90 hover:text-white transition-smooth">Home</a>
+            <a href="/services" className="text-white/90 hover:text-white transition-smooth">Services</a>
             <a href="#" className="text-white/90 hover:text-white transition-smooth">About</a>
             <a href="#" className="text-white/90 hover:text-white transition-smooth">Contact</a>
             <Button variant="hero" size="sm">
@@ -45,8 +45,8 @@ export const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-white/20 pt-4">
             <div className="flex flex-col gap-4">
-              <a href="#" className="text-white/90 hover:text-white transition-smooth">Home</a>
-              <a href="#" className="text-white/90 hover:text-white transition-smooth">Services</a>
+              <a href="/" className="text-white/90 hover:text-white transition-smooth">Home</a>
+              <a href="/services" className="text-white/90 hover:text-white transition-smooth">Services</a>
               <a href="#" className="text-white/90 hover:text-white transition-smooth">About</a>
               <a href="#" className="text-white/90 hover:text-white transition-smooth">Contact</a>
               <Button variant="hero" size="sm" className="w-fit">
