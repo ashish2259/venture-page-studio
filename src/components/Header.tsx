@@ -23,9 +23,13 @@ export const Header = () => {
           <nav className="hidden md:flex items-center gap-8">
             <a href="/" className="text-white/90 hover:text-white transition-smooth">Home</a>
             <a href="/services" className="text-white/90 hover:text-white transition-smooth">Services</a>
-            <a href="#" className="text-white/90 hover:text-white transition-smooth">About</a>
-            <a href="#" className="text-white/90 hover:text-white transition-smooth">Contact</a>
-            <Button variant="hero" size="sm">
+            <a href="#about" className="text-white/90 hover:text-white transition-smooth">About</a>
+            <a href="/contact" className="text-white/90 hover:text-white transition-smooth">Contact</a>
+            <Button 
+              variant="hero" 
+              size="sm"
+              onClick={() => window.location.href = 'mailto:contact@fusionnexinnovations.com?subject=Quote Request'}
+            >
               Get Quote
             </Button>
           </nav>
@@ -47,9 +51,14 @@ export const Header = () => {
             <div className="flex flex-col gap-4">
               <a href="/" className="text-white/90 hover:text-white transition-smooth">Home</a>
               <a href="/services" className="text-white/90 hover:text-white transition-smooth">Services</a>
-              <a href="#" className="text-white/90 hover:text-white transition-smooth">About</a>
-              <a href="#" className="text-white/90 hover:text-white transition-smooth">Contact</a>
-              <Button variant="hero" size="sm" className="w-fit">
+              <a href="#about" className="text-white/90 hover:text-white transition-smooth">About</a>
+              <a href="/contact" className="text-white/90 hover:text-white transition-smooth">Contact</a>
+              <Button 
+                variant="hero" 
+                size="sm" 
+                className="w-fit"
+                onClick={() => window.location.href = 'mailto:contact@fusionnexinnovations.com?subject=Quote Request'}
+              >
                 Get Quote
               </Button>
             </div>

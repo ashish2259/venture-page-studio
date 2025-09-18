@@ -41,6 +41,7 @@ export const Hero = () => {
             variant="hero" 
             size="lg"
             className="text-lg px-8 py-4"
+            onClick={() => window.location.href = 'mailto:contact@fusionnexinnovations.com?subject=Get Started - Project Inquiry'}
           >
             Get Started Today
           </Button>
@@ -48,6 +49,7 @@ export const Hero = () => {
             variant="hero-outline" 
             size="lg"
             className="text-lg px-8 py-4"
+            onClick={() => window.location.href = '/services'}
           >
             Learn More
           </Button>

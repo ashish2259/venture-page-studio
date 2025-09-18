@@ -140,10 +140,19 @@ const Services = () => {
             Let's discuss your project and find the perfect solution for your business needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-6">
+            <Button 
+              size="lg" 
+              className="text-lg px-8 py-6"
+              onClick={() => window.location.href = 'mailto:contact@fusionnexinnovations.com?subject=Free Consultation Request'}
+            >
               Get Free Consultation
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="text-lg px-8 py-6"
+              onClick={() => window.location.href = '/contact'}
+            >
               View Portfolio
             </Button>
           </div>

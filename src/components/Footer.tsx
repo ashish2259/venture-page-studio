@@ -2,9 +2,46 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Twitter, Linkedin, Github } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import fusionnexLogo from "@/assets/fusionnex-logo.png";
 
 export const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    
+    setIsLoading(true);
+    
+    try {
+      // Create mailto link for newsletter subscription
+      const subject = encodeURIComponent("Newsletter Subscription");
+      const body = encodeURIComponent(`Please subscribe this email to your newsletter: ${email}`);
+      const mailtoLink = `mailto:hr@fusionnex.net?subject=${subject}&body=${body}`;
+      
+      window.location.href = mailtoLink;
+      
+      toast({
+        title: "Subscription Request Sent",
+        description: "Your email client should open to complete the newsletter subscription.",
+      });
+      
+      setEmail("");
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to open email client. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <footer className="bg-gradient-subtle border-t border-border">
       <div className="max-w-7xl mx-auto px-6 py-16">
@@ -76,15 +113,24 @@ export const Footer = () => {
             
             <div>
               <h5 className="text-sm font-semibold text-foreground mb-3">Subscribe to Newsletter</h5>
-              <div className="flex gap-2">
+              <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
                 <Input 
+                  type="email"
                   placeholder="Enter your email" 
                   className="flex-1"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
-                <Button variant="default" size="sm">
-                  Subscribe
+                <Button 
+                  type="submit" 
+                  variant="default" 
+                  size="sm"
+                  disabled={isLoading}
+                >
+                  {isLoading ? "..." : "Subscribe"}
                 </Button>
-              </div>
+              </form>
             </div>
           </div>
         </div>
