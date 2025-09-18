@@ -23,28 +23,36 @@ const Contact = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate sending email (in real app, this would call your backend)
     try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent(formData.subject || "Contact Form Inquiry");
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-      );
-      const mailtoLink = `mailto:contact@fusionnexinnovations.com?subject=${subject}&body=${body}`;
-      
-      window.location.href = mailtoLink;
-      
-      toast({
-        title: "Email Client Opened",
-        description: "Your default email client should open with the message filled out.",
+      // Submit to Formspree (replace YOUR_FORM_ID with your actual Formspree form ID)
+      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
       });
-      
-      // Reset form
-      setFormData({ name: "", email: "", subject: "", message: "" });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for your message. We'll get back to you within 24 hours.",
+        });
+        
+        // Reset form
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        throw new Error("Failed to send message");
+      }
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to open email client. Please try again.",
+        description: "Failed to send message. Please try again or contact us directly.",
         variant: "destructive",
       });
     } finally {
