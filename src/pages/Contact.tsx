@@ -23,28 +23,40 @@ const Contact = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate sending email (in real app, this would call your backend)
     try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent(formData.subject || "Contact Form Inquiry");
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-      );
-      const mailtoLink = `mailto:contact@fusionnexinnovations.com?subject=${subject}&body=${body}`;
-      
-      window.location.href = mailtoLink;
-      
-      toast({
-        title: "Email Client Opened",
-        description: "Your default email client should open with the message filled out.",
+      const response = await fetch('/contact.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        })
       });
-      
-      // Reset form
-      setFormData({ name: "", email: "", subject: "", message: "" });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "✅ Message sent successfully",
+          description: "We'll get back to you within 24 hours.",
+        });
+        
+        // Reset form on success
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        toast({
+          title: "❌ Failed to send message",
+          description: result.error || "Please try again later.",
+          variant: "destructive",
+        });
+      }
     } catch (error) {
       toast({
-        title: "Error",
-        description: "Failed to open email client. Please try again.",
+        title: "❌ Failed to send message",
+        description: "Network error. Please check your connection and try again.",
         variant: "destructive",
       });
     } finally {
