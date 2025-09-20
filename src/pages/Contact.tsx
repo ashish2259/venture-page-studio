@@ -114,7 +114,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-card-foreground">Email</h3>
-                        <p className="text-muted-foreground">contact@fusionnexinnovations.com</p>
+                        <p className="text-muted-foreground">info@fusionnex.net</p>
                       </div>
                     </div>
                   </CardContent>
@@ -128,7 +128,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-card-foreground">Phone</h3>
-                        <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                        <p className="text-muted-foreground">+9731852431</p>
                       </div>
                     </div>
                   </CardContent>
@@ -142,7 +142,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-card-foreground">Address</h3>
-                        <p className="text-muted-foreground">123 Innovation St, Tech City, TC 12345</p>
+                        <p className="text-muted-foreground">Bengaluru, India</p>
                       </div>
                     </div>
                   </CardContent>
