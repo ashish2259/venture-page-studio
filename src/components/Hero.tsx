@@ -41,7 +41,7 @@ export const Hero = () => {
             variant="hero" 
             size="lg"
             className="text-lg px-8 py-4"
-            onClick={() => window.location.href = 'mailto:contact@fusionnexinnovations.com?subject=Get Started - Project Inquiry'}
+            onClick={() => window.location.href = '/contact'}
           >
             Get Started Today
           </Button>
