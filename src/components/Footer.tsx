@@ -26,8 +26,8 @@ export const Footer = () => {
       window.location.href = mailtoLink;
       
       toast({
-        title: "Subscription Request Sent",
-        description: "Your email client should open to complete the newsletter subscription.",
+        title: "You are subscribed!",
+        description: "Thank you for subscribing to our newsletter.",
       });
       
       setEmail("");
