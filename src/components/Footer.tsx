@@ -18,13 +18,6 @@ export const Footer = () => {
     setIsLoading(true);
     
     try {
-      // Create mailto link for newsletter subscription
-      const subject = encodeURIComponent("Newsletter Subscription");
-      const body = encodeURIComponent(`Please subscribe this email to your newsletter: ${email}`);
-      const mailtoLink = `mailto:hr@fusionnex.net?subject=${subject}&body=${body}`;
-      
-      window.location.href = mailtoLink;
-      
       toast({
         title: "You are subscribed!",
         description: "Thank you for subscribing to our newsletter.",
@@ -34,7 +27,7 @@ export const Footer = () => {
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to open email client. Please try again.",
+        description: "Failed to subscribe. Please try again.",
         variant: "destructive",
       });
     } finally {
